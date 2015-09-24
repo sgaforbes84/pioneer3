@@ -1,0 +1,149 @@
+<robot name="pioneer3at">
+ <pose>0 0 1 0 0 0</pose>
+  <static>false</static>
+  <link name="base_link">
+    <visual name="visual">
+      <geometry>
+        <mesh filename="package://pioneer_description/meshes/pioneer2dx/chassis.stl"/>
+      </geometry>
+    </visual>
+  </link>
+
+  <link name="right_front_wheel">
+    <visual>
+      <geometry>
+        <mesh filename="package://pioneer_description/meshes/p3at_meshes/wheelblack.stl"/>
+      </geometry>
+      <material name="black">
+        <color rgba="0 0 0 1"/>
+      </material>
+    </visual>
+  </link>
+  <joint type="fixed" name="p3at_front_right_wheel_joint">
+    <parent link="base_link"/>
+    <child link="right_front_wheel"/>
+    <axis rpy="0 0 0" xyz="0 1 0"/>
+    <origin rpy="0 0 0" xyz="-0.125 -0.201 -0.06"/>
+  </joint>
+
+  <link name="right_front_hubcap">
+    <visual>
+      <geometry>
+        <mesh filename="package://pioneer_description/meshes/p3at_meshes/right_hubcap.stl"/>
+      </geometry>
+      <material name="gold">
+        <color rgba="255 215 0 1"/>
+      </material>     
+    </visual>
+  </link>
+  <joint type="fixed" name="p3at_front_right_hubcap_joint">
+    <parent link="right_front_wheel"/>
+    <child link="right_front_hubcap"/>
+    <axis rpy="0 0 0" xyz="0 1 0"/>
+    <origin rpy="0 0 0" xyz="0 0 0"/>
+  </joint>
+
+
+  <link name="left_front_wheel">
+    <visual>
+      <geometry>
+        <mesh filename="package://pioneer_description/meshes/p3at_meshes/wheelblack.stl"/>
+      </geometry>
+      <material name="black">
+        <color rgba="0 0 0 1"/>
+      </material>
+    </visual>
+  </link>
+  <joint type="fixed" name="p3at_front_left_wheel_joint">
+    <parent link="base_link" />
+    <child link="left_front_wheel" />
+    <axis rpy="0 0 0" xyz="0 1 0" />
+    <origin rpy="0 0 0" xyz="0.125 0.201 -0.06"/>
+  </joint>
+
+  <link name="left_front_hubcap">
+    <visual>
+      <geometry>
+        <mesh filename="package://pioneer_description/meshes/p3at_meshes/left_hubcap.stl"/>
+      </geometry>
+      <material name="gold">
+        <color rgba="255 215 0 1"/>
+      </material>     
+    </visual>
+  </link>
+  <joint type="fixed" name="p3at_front_left_hubcap_joint">
+    <parent link="left_front_wheel"/>
+    <child link="left_front_hubcap"/>
+    <axis rpy="0 0 0" xyz="0 1 0"/>
+    <origin rpy="0 0 0" xyz="0 0 0"/>
+  </joint>
+
+  <link name="right_rear_wheel">
+    <visual>
+      <geometry>
+        <mesh filename="package://pioneer_description/meshes/p3at_meshes/wheelblack.stl"/>
+      </geometry>
+      <material name="black">
+        <color rgba="0 0 0 1"/>
+      </material>
+    </visual>
+  </link>
+  <joint type="fixed" name="p3at_rear_right_wheel_joint">
+    <parent link="base_link" />
+    <child link="right_rear_wheel" />
+    <axis rpy="0 0 0" xyz="0 1 0" />
+    <origin rpy="0 0 0" xyz="-0.125 0.201 -0.06" />
+  </joint>
+
+  <link name="right_rear_hubcap">
+    <visual>
+      <geometry>
+        <mesh filename="package://pioneer_description/meshes/p3at_meshes/left_hubcap.stl"/>
+      </geometry>
+      <material name="gold">
+        <color rgba="255 215 0 1"/>
+      </material>     
+    </visual>
+  </link>
+  <joint type="fixed" name="p3at_rear_right_hubcap_joint">
+    <parent link="right_rear_wheel"/>
+    <child link="right_rear_hubcap"/>
+    <axis rpy="0 0 0" xyz="0 1 0"/>
+    <origin rpy="0 0 0" xyz="0 0 0"/>
+  </joint>
+
+  <link name="left_rear_wheel">
+    <visual>
+      <geometry>
+        <mesh filename="package://pioneer_description/meshes/p3at_meshes/wheelblack.stl"/>
+      </geometry>
+      <material name="black">
+        <color rgba="0 0 0 1"/>
+      </material>
+    </visual>
+  </link>
+  <joint type="fixed" name="p3at_rear_left_wheel_joint">
+    <parent link="base_link" />
+    <child link="left_rear_wheel" />
+    <axis rpy="0 0 0" xyz="0 1 0" />
+    <origin rpy="0 0 0" xyz="0.125 -0.201 -0.06" />
+  </joint>
+
+  <link name="left_rear_hubcap">
+    <visual>
+      <geometry>
+        <mesh filename="package://pioneer_description/meshes/p3at_meshes/right_hubcap.stl"/>
+      </geometry>
+      <material name="gold">
+        <color rgba="255 215 0 1"/>
+      </material>     
+    </visual>
+  </link>
+  <joint type="fixed" name="p3at_left_rear_hubcap_joint">
+    <parent link="left_rear_wheel"/>
+    <child link="left_rear_hubcap"/>
+    <axis rpy="0 0 0" xyz="0 1 0"/>
+    <origin rpy="0 0 0" xyz="0 0 0"/>
+  </joint>
+
+</robot>
