@@ -8,6 +8,37 @@
       </geometry>
     </visual>
   </link>
+  
+    <link name="LaserScanner">
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://pioneer_description/meshes/p3at_meshes/LaserScanner.STL" />
+      </geometry>
+      <material
+        name="blue">
+        <color
+          rgba="0 0.45882 1 1" />
+      </material>
+    </visual>
+      <geometry>
+        <mesh
+          filename="package://pioneer_description/meshes/p3at_meshes/LaserScanner.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint type="fixed" name="Laser_Scanner">
+    <parent link="base_link"/>
+    <child link="LaserScanner"/>
+    <axis rpy="0 0 0" xyz="0 0 0"/>
+    <origin rpy="0 0 0" xyz="0.05 0 0.06"/>
+  </joint>
 
   <link name="right_front_wheel">
     <visual>
